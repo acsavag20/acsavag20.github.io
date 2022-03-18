@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
+<head>
+<style>
+    body {margin:10px;}
+
+        div.polaroid_gam {
+          width:13%;
+          vertical-align: bottom;
+          z-index: -1;
+          background-color: rgb(250, 250, 250);
+          box-shadow: 0 1px 20px 0 rgba(245, 221, 1, 0.575), 0 6px 20px 0 rgba(236, 240, 6, 0.801);
+          margin-bottom: 50px;
+          align-items: normal;
+        }
+        
+        div.container {
+          text-align: center;
+          color: rgb(0, 0, 0);
+        }
+</style>
         <meta charset="utf-8">
         <title>Tournaments</title>
-      </head>
+</head>
 
 <body>
     <div id='Header'>
@@ -16,9 +34,16 @@
     </div>
     <div id='Media'>
     </div>
-    <div id='Links'>
+    <!--<div id='Links'>
+         Image variation testing
         <ol>
-        <li><a href='https://www.masters.com/index.html' target="_blank"><img src='../media/masters.png' alt="Masters Flag" height=120/></a> </li>
-        </ol>    
+        <li><a href='https://www.masters.com/index.html' target="_blank"><img src='../media/masters.png' alt="Masters Flag" height=70 /></a> </li>
+        </ol>   
+    </div>--> 
+    <div class="polaroid_gam">
+        <a href='https://www.masters.com/index.html' target="_blank"><img src="../media/masters.png" height=70 width="auto" alt="Masters flag"></a>
+        <div class="container">
+            <p><b>The Masters</b></p>
+        </div>
     </div>
 </body>

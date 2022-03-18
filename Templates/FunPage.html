@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>The Fun Page</title>
+      </head>
+    {% extends "template.html" %}
+    {% block content %}
+<body>
+    <div id='Header'>
+    <h1>Testing Page (Header)</h1>
+    <p>This is the child of body</p>
+    </div>
+    <div>
+        <h2>Second Header</h2>
+        <p>This is the grandchild of the body </p>
+    </div>
+    <div id='Media'>
+        <video src='https://www.youtube.com/watch?v=BElR93Vynhg' width=320 height=240 controls>
+            video not supported
+        </video>
+    </div>
+    <div id='Links'>
+        <a target="_blank">The Masters</a><br>
+        <a href='./about' target="_blank"><img src='./media/masters.png' alt="Masters Flag"/></a> 
+    </div>
+    {% endblock %}
+</body>

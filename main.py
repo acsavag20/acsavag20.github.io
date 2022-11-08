@@ -16,7 +16,7 @@ def pictureex():
 
 @app.route("/fun")
 def FunPage():
-    return render_template("FunPage.html")
+    return render_template("FunPage2.html")
 
 import requests,re,pandas as pd
 #World Golf Ranking List Sub-site
@@ -27,7 +27,7 @@ df_list=pd.read_html(r.text)
 df=df_list[1]
 wgrank=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
 
-@app.route('/WGRankings')
+@app.route('/Templates/GambleGolf/HTMLs')
 def WGRankings():
     animal='dog'
     return render_template('WGRankings.html',data=wgrank,value=animal,animals=['dog','cat'])

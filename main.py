@@ -29,7 +29,8 @@ wgrank=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
 
 @app.route('/WGRankings')
 def WGRankings():
-    return render_template('WGRankings.html',data=wgrank,animal='dog',animals=['dog','cat'])
+    animal='dog'
+    return render_template('WGRankings.html',data=wgrank,value=animal,animals=['dog','cat'])
 
 if __name__ == "__main__":
     app.run(debug=True)

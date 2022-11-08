@@ -38,4 +38,4 @@ def wgrank():
     df_list=pd.read_html(r.text)
     df=df_list[1]
     df=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
-    return render_template('WGRankings.html',title="World Golf Rankings",wgranking=df)
+    return render_template('WGRankings.html',wgranking=df)

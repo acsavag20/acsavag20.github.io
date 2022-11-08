@@ -6,17 +6,6 @@ app = Flask(__name__)
 def home():
     return render_template("home.html")
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-@app.route("/Pictures")
-def pictureex():
-    return render_template("pictureex.html")
-
-@app.route("/fun")
-def FunPage():
-    return render_template("FunPage2.html")
 
 import requests,re,pandas as pd
 #World Golf Ranking List Sub-site
@@ -27,7 +16,7 @@ df_list=pd.read_html(r.text)
 df=df_list[1]
 wgrank=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
 
-@app.route('/Templates/GambleGolf/HTMLs')
+@app.route('/')
 def WGRankings():
     animal='dog'
     return render_template('WGRankings.html',data=wgrank,value=animal,animals=['dog','cat'])

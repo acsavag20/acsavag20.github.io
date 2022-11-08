@@ -1,37 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
-    <title>About Andrew</title>
-  </head>
-This is my personal project space and place to learn what makes me tick.
-
-{{value}}
-{value}
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ranking</title>
+</head>
 <body>
-  <table>
-      <thead>
-          <tr>
-              <!-- Iterate over the columns and output their names as header columns. -->
-              {% for column in data.columns -%}
-              <th>{{ column }}</th>
-              {% endfor -%}
-          </tr>
-      </thead>
-      <tbody>
-          <!-- Iterate over the rows of data. -->
-          {% for row in data.values -%}
-          <tr>
-              <!-- Iterate over the columns of the respective row and output them. -->
-              {% for cell in row %}
-              <td>{{ cell }}</td>
-              {% endfor -%}
-          </tr>
-          {% endfor -%}
-      </tbody>
-  </table>
+    <table>
+        <thead>
+            <tr>
+                <!-- Iterate over the columns and output their names as header columns. -->
+                {% for column in data.columns -%}
+                <th>{{ column }}</th>
+                {% endfor -%}
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over the rows of data. -->
+            {% for row in data.values -%}
+            <tr>
+                <!-- Iterate over the columns of the respective row and output them. -->
+                {% for cell in row %}
+                <td>{{ cell }}</td>
+                {% endfor -%}
+            </tr>
+            {% endfor -%}
+        </tbody>
+    </table>
 </body>
-</html>
-  </body>
 </html>

@@ -10,7 +10,7 @@ def about():
     # Rename the specified columns and extract them into a new DataFrame.
     data = df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})[['Rank', 'Name']]
     # Pass all local variables to the template by name.
-    return render_template('/About Me/about.html', **locals())
+    return render_template('About Me/about.html', **locals())
 
 
 
@@ -27,7 +27,7 @@ def ranking():
     # Rename the specified columns and extract them into a new DataFrame.
     data = df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})[['Rank', 'Name']]
     # Pass all local variables to the template by name.
-    return render_template('/Golf/rankings.html', **locals())
+    return render_template('Golf/rankings.html', **locals())
 
 if __name__ == "__main__":
     app.run(debug=True)

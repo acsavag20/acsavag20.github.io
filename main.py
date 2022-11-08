@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/About Me")
 def about():
-    return render_template("about.html")
+    dog='kylo'
+    return render_template("about.html",value=dog)
 
 
 import requests,re,pandas as pd

@@ -4,12 +4,6 @@ app = Flask(__name__)
 
 @app.route("/About Me")
 def about():
-    # Obtain the data and extract the table.
-    resp = requests.get('https://www.pgatour.com/stats/stat.186.html')
-    df = pd.read_html(resp.content)[1]
-    # Rename the specified columns and extract them into a new DataFrame.
-    data = df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})[['Rank', 'Name']]
-    # Pass all local variables to the template by name.
     return render_template('About Me/about.html', **locals())
 
 

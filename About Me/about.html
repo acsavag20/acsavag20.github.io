@@ -9,6 +9,29 @@ This is my personal project space and place to learn what makes me tick.
 {{value}}
 {value}
 
-a
+<body>
+  <table>
+      <thead>
+          <tr>
+              <!-- Iterate over the columns and output their names as header columns. -->
+              {% for column in data.columns -%}
+              <th>{{ column }}</th>
+              {% endfor -%}
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Iterate over the rows of data. -->
+          {% for row in data.values -%}
+          <tr>
+              <!-- Iterate over the columns of the respective row and output them. -->
+              {% for cell in row %}
+              <td>{{ cell }}</td>
+              {% endfor -%}
+          </tr>
+          {% endfor -%}
+      </tbody>
+  </table>
+</body>
+</html>
   </body>
 </html>

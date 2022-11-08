@@ -1,21 +1,23 @@
 from flask import Flask,render_template
-
+import requests,re,pandas as pd
 app = Flask(__name__)
 
 @app.route("/About Me")
 def about():
-    dog='kylo'
-    return render_template("/About Me/about.html",value=dog)
+    # Obtain the data and extract the table.
+    resp = requests.get('https://www.pgatour.com/stats/stat.186.html')
+    df = pd.read_html(resp.content)[1]
+    # Rename the specified columns and extract them into a new DataFrame.
+    data = df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})[['Rank', 'Name']]
+    # Pass all local variables to the template by name.
+    return render_template('ranking.html', **locals())
 
 
-import requests,re,pandas as pd
+
+
 #World Golf Ranking List Sub-site
 #url = "https://www.owgr.com/current-world-ranking"
-url = "https://www.pgatour.com/stats/stat.186.html"
-r=requests.get(url)
-df_list=pd.read_html(r.text)
-df=df_list[1]
-wgrank=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
+
 
 @app.route('/')
 def WGRankings():

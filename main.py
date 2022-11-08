@@ -27,15 +27,14 @@ import re
 import pandas as pd
 import sqlite3
 from pandas.io.html import read_html
+#World Golf Ranking List Sub-site
+#url = "https://www.owgr.com/current-world-ranking"
+url = "https://www.pgatour.com/stats/stat.186.html"
+r=requests.get(url)
+df_list=pd.read_html(r.text)
+df=df_list[1]
+df=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
 
 @app.route('/WGRankings')
-def wgrank():
-    #World Golf Ranking List Sub-site
-    #url = "https://www.owgr.com/current-world-ranking"
-    url = "https://www.pgatour.com/stats/stat.186.html"
-
-    r=requests.get(url)
-    df_list=pd.read_html(r.text)
-    df=df_list[1]
-    df=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
-    return render_template('WGRankings.html',wgranking=df)
+def WGRankings():
+    return render_template('WGRankings.html',data=df)

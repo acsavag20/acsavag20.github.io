@@ -2,9 +2,9 @@ from flask import Flask,render_template
 
 app = Flask(__name__)
 
-@app.route("/home.html")
-def home():
-    return render_template("home.html")
+@app.route("/About Me")
+def about():
+    return render_template("about.html")
 
 
 import requests,re,pandas as pd

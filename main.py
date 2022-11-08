@@ -21,3 +21,22 @@ def FunPage():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+import requests
+import re
+import pandas as pd
+import sqlite3
+from pandas.io.html import read_html
+
+@app.route('/WGRankings')
+def wgrank():
+    #World Golf Ranking List Sub-site
+    #url = "https://www.owgr.com/current-world-ranking"
+    url = "https://www.pgatour.com/stats/stat.186.html"
+
+    r=requests.get(url)
+    df_list=pd.read_html(r.text)
+    df=df_list[1]
+    df=df.rename(columns={"RANK\xa0THIS WEEK":"Rank","PLAYER NAME":"Name"})
+    wgranking=df
+    return render_template('WGRankings.html',title="World Golf Rankings",names=df['Name'],rankings=df['Rank'],data=df['Rank','Name'])

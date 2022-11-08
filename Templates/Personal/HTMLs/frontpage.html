@@ -19,9 +19,11 @@
     p   {
         color: azure;
     }
-    #p1 {
+    #header {
         background-color: black;
         color: red;
+        text-align: center;
+        font: 24px Monaco, serif;
     }
     .topnav{
         background: rgba(0, 0, 0, 0.3);
@@ -36,10 +38,10 @@
         padding: 25px;
         text-align: left;
         text-decoration: none;
-        color: rgb(116, 0, 0);
+        color: #FD7014;
         text-emphasis: bold;
         margin-left: -2%;
-        font: 24px Monaco, serif;
+        font: 32px Monaco, serif;
     }
     .topnav a.contact{
         
@@ -56,6 +58,11 @@
         align-items: center;
         display: flexbox;
     }
+    .container{text-align: center;}
+    .container img{
+        display: inline-block;
+        margin: 0 1% 0 1%;
+    }
     
     </style>
 
@@ -66,20 +73,20 @@
 
 </div>
 <head>
-    <p id="p1">what if we tried this</p>
+    <p id="header">About me</p>
 </head>
 <body id="pictures">
     <button></button>
+    <div class="container">
     <img src="../media/cbus.jpg" id="bg2" alt="" >
     <!-- <p>this is a test</p> -->
     <!-- About me rotating images  -->
     <!-- first is resume -->
-    <img src="../media/Desk.png" alt="desk" height=200px>
-    <!-- second is about me personal -->
-    <img src="../media/hockey.png" height=200px>
+    <img src="../media/Desk.png" alt="desk" height=200px display:inline-block>
     <!-- Third is hobbies -->
     <img src="../media/mclaren.jpg" height=200px>
-    <br>
-    
+    <!-- second is about me personal -->
+    <img src="../media/hockey.png" height=200px>
+</div>
 </body>
 </html>

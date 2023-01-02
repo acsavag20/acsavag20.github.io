@@ -32,6 +32,7 @@ repo = git.Repo("")
 workbook= openpyxl.Workbook()
 sheet= workbook.active
 sheet = df
+df.to_html("wgr_rankings.html")
 workbook.save("wgr_rankings.xlsx")
 repo.index.add(["wgr_rankings.xlsx"])
 repo.index.commit("Added golfers excel")
